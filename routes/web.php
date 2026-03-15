@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/{any}', function () {
-    return file_get_contents(public_path('frontend/index.html'));
+    $path = public_path('frontend/dist/index.html');
+
+    if (!file_exists($path)) {
+        return "L-ficher index.html makaynich f: " . $path;
+    }
+
+    return response()->file($path);
 })->where('any', '.*');
