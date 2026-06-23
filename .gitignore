@@ -28,6 +28,9 @@ vendor/
 /storage/*.key
 /storage/pail
 
+/app/private
+/app/public
+
 Homestead.json
 Homestead.yaml
 
